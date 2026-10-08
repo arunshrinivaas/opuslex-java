@@ -1,47 +1,48 @@
-# OpusLex: Legal & Compliance Research Assistant
+# OpusLex — Java / Spring Boot
 
-OpusLex is a RAG-based AI Agent platform for legal and compliance professionals. It allows teams to investigate incidents, compare documents against compliance frameworks, and chat securely with an internal knowledge base.
+## Project Overview
+OpusLex is a legal and compliance research assistant. This repository contains the active Java 21 + Spring Boot implementation, migrated from the original Python/FastAPI architecture.
 
-## Architecture Overview
-- **Frontend**: React + TypeScript + Vite + Tailwind CSS.
-- **Backend**: FastAPI (Python 3.12).
-- **Database**: PostgreSQL with pgvector for embeddings. ORM by SQLAlchemy + Alembic.
-- **AI/LLM**: Powered by GitHub Copilot models.
+**Note:** The original Python/FastAPI implementation is archived separately and is NOT required to run this version.
 
-## Prerequisites
-- Node.js (v18+)
-- Python (3.12+)
-- PostgreSQL (with `pgvector` extension)
-- GitHub Copilot CLI and valid license/account (required for backend LLM features)
+## Architecture
+- **Frontend**: React + TypeScript + Vite
+- **Backend**: Java 21 + Spring Boot 3.x
+- **Security**: Spring Security + JWT, Email/Phone OTP, Google Auth, TOTP/2FA
+- **Database**: PostgreSQL with pgvector for embeddings
+- **AI/RAG**: Spring AI, DJL + local ONNX embedding model, AI Agent, MCP (Model Context Protocol)
 
-## Backend Setup
-1. `cd backend`
-2. Create virtual environment: `python -m venv .venv`
-3. Activate: `source .venv/bin/activate`
-4. Install dependencies: `pip install -r requirements.txt`
-5. Configure environment: Copy `.env.example` to `.env` and fill the variables.
-6. Initialize Database:
-   - Ensure PostgreSQL is running.
-   - Run migrations: `alembic upgrade head`
-7. Start Server: `fastapi dev app/main.py` (or `uvicorn app.main:app --reload`)
+## Local Development Setup
 
-## Frontend Setup
-1. `cd frontend`
-2. Install dependencies: `npm install`
-3. Configure environment: Copy `.env.example` to `.env.local` and define `VITE_API_BASE_URL` (defaults to `http://127.0.0.1:8000`).
-4. Start dev server: `npm run dev`
-5. Production build: `npm run build`
+### Required Environment Variables
+Create a `.env` file in `backend-java/` with the following variables:
+```
+DB_URL=jdbc:postgresql://localhost:5432/opuslex
+DB_USERNAME=your_db_user
+DB_PASSWORD=your_db_password
+JWT_SECRET_KEY=your_base64_jwt_secret
+OPENAI_API_KEY=your_openai_key
+TWILIO_ACCOUNT_SID=your_twilio_sid
+TWILIO_AUTH_TOKEN=your_twilio_token
+GOOGLE_CLIENT_ID=your_google_client_id
+```
 
-## Copilot Requirement
-**IMPORTANT**: The target deployment machine MUST have the GitHub Copilot CLI installed, configured, and authenticated with an active account/license. The application relies on `gh copilot` for AI model resolution.
+### Running Backend
+```bash
+cd backend-java
+mvn clean install
+mvn spring-boot:run
+```
 
-## Integrations
-- **Google Drive, Dropbox, Box, OneDrive, SharePoint**: Currently unavailable ("Coming Soon" intentionally).
+### Running Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-## Local Development & Testing
-- Backend tests: `pytest`
-- Migrations check: `alembic heads` && `alembic current`
-- Frontend type check: `npx tsc --noEmit`
-
-## Known Limitations
-- The Copilot connectivity layer requires a clean, authenticated environment to succeed. Tests that hit the Copilot API may fail locally if the environment lacks proper authentication.
+### Running Tests
+```bash
+cd backend-java
+mvn clean test
+```
