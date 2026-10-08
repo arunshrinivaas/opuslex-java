@@ -9,18 +9,18 @@ public class DocumentChunk {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "document_id")
-    private Long document_id;
+    private Integer document_id;
 
     @Column(name = "chunk_index")
-    private Long chunk_index;
+    private Integer chunk_index;
 
     @Column(name = "content")
     private String content;
 
-    @Column(name = "embedding")
+    @Column(name = "embedding", columnDefinition = "vector")
     private String embedding;
 
     @Column(name = "created_at")

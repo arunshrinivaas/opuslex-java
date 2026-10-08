@@ -9,7 +9,7 @@ public class Investigation {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "title")
     private String title;
@@ -21,13 +21,13 @@ public class Investigation {
     private String status;
 
     @Column(name = "user_id")
-    private Long user_id;
+    private Integer user_id;
 
     @Column(name = "review_status")
     private String review_status;
 
     @Column(name = "reviewer_id")
-    private Long reviewer_id;
+    private Integer reviewer_id;
 
     @Column(name = "reviewed_at")
     private LocalDateTime reviewed_at;
@@ -38,10 +38,10 @@ public class Investigation {
     @Column(name = "updated_at")
     private LocalDateTime updated_at;
 
-    @Column(name = "documents")
+    @Transient
     private String documents;
 
-    @Column(name = "agent_runs")
+    @Transient
     private String agent_runs;
 
 }

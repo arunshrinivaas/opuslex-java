@@ -9,10 +9,10 @@ public class KnowledgePost {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "user_id")
-    private Long user_id;
+    private Integer user_id;
 
     @Column(name = "title")
     private String title;
@@ -24,12 +24,12 @@ public class KnowledgePost {
     private String source_citation;
 
     @Column(name = "investigation_id")
-    private Long investigation_id;
+    private Integer investigation_id;
 
     @Column(name = "created_at")
     private LocalDateTime created_at;
 
-    @Column(name = "author")
+    @Transient
     private String author;
 
 }

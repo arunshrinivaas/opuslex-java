@@ -9,13 +9,13 @@ public class InvestigationComment {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "investigation_id")
-    private Long investigation_id;
+    private Integer investigation_id;
 
     @Column(name = "user_id")
-    private Long user_id;
+    private Integer user_id;
 
     @Column(name = "text")
     private String text;

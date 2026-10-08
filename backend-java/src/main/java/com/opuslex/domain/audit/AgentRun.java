@@ -1,6 +1,9 @@
 package com.opuslex.domain.audit;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+import com.fasterxml.jackson.databind.JsonNode;
 import java.time.LocalDateTime;
 
 @Entity
@@ -9,13 +12,13 @@ public class AgentRun {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "investigation_id")
-    private Long investigation_id;
+    private Integer investigation_id;
 
     @Column(name = "user_id")
-    private Long user_id;
+    private Integer user_id;
 
     @Column(name = "question")
     private String question;
@@ -27,25 +30,31 @@ public class AgentRun {
     private String finding;
 
     @Column(name = "evidence")
-    private String evidence;
+    @JdbcTypeCode(SqlTypes.JSON)
+    private JsonNode evidence;
 
     @Column(name = "conflicts")
-    private String conflicts;
+    @JdbcTypeCode(SqlTypes.JSON)
+    private JsonNode conflicts;
 
     @Column(name = "evidence_gaps")
-    private String evidence_gaps;
+    @JdbcTypeCode(SqlTypes.JSON)
+    private JsonNode evidence_gaps;
 
     @Column(name = "applicable_requirements")
-    private String applicable_requirements;
+    @JdbcTypeCode(SqlTypes.JSON)
+    private JsonNode applicable_requirements;
 
     @Column(name = "suggested_actions")
-    private String suggested_actions;
+    @JdbcTypeCode(SqlTypes.JSON)
+    private JsonNode suggested_actions;
 
     @Column(name = "citations")
-    private String citations;
+    @JdbcTypeCode(SqlTypes.JSON)
+    private JsonNode citations;
 
     @Column(name = "risk_score")
-    private Long risk_score;
+    private Integer risk_score;
 
     @Column(name = "risk_level")
     private String risk_level;
@@ -53,7 +62,7 @@ public class AgentRun {
     @Column(name = "created_at")
     private LocalDateTime created_at;
 
-    @Column(name = "investigation")
+    @Transient
     private String investigation;
 
 }

@@ -9,7 +9,7 @@ public class Document {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "title")
     private String title;
@@ -33,12 +33,12 @@ public class Document {
     private String extracted_text;
 
     @Column(name = "user_id")
-    private Long user_id;
+    private Integer user_id;
 
     @Column(name = "uploaded_at")
     private LocalDateTime uploaded_at;
 
-    @Column(name = "investigations")
+    @Transient
     private String investigations;
 
 }

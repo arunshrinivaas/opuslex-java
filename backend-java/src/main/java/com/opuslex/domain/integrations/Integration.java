@@ -9,10 +9,10 @@ public class Integration {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "user_id")
-    private Long user_id;
+    private Integer user_id;
 
     @Column(name = "provider")
     private String provider;
@@ -38,7 +38,7 @@ public class Integration {
     @Column(name = "updated_at")
     private LocalDateTime updated_at;
 
-    @Column(name = "user")
+    @Transient
     private String user;
 
 }

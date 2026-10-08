@@ -9,7 +9,7 @@ public class User {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "email")
     private String email;
@@ -50,7 +50,7 @@ public class User {
     @Column(name = "updated_at")
     private LocalDateTime updated_at;
 
-    @Column(name = "agent_runs")
+    @Transient
     private String agent_runs;
 
 }

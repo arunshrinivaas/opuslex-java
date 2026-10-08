@@ -9,10 +9,10 @@ public class InvestigationQuery {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "investigation_id")
-    private Long investigation_id;
+    private Integer investigation_id;
 
     @Column(name = "question")
     private String question;
