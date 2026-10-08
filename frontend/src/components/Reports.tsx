@@ -39,10 +39,10 @@ export default function Reports() {
             try {
                 const token = localStorage.getItem("access_token")
                 const [findingsRes, summaryRes] = await Promise.all([
-                    fetch(`http://127.0.0.1:8000/api/v1/audit/findings?status=completed&limit=200`, {
+                    fetch(`http://127.0.0.1:8080/api/v1/audit/findings?status=completed&limit=200`, {
                         headers: { Authorization: `Bearer ${token}` }
                     }),
-                    fetch(`http://127.0.0.1:8000/api/v1/governance/summary`, {
+                    fetch(`http://127.0.0.1:8080/api/v1/governance/summary`, {
                         headers: { Authorization: `Bearer ${token}` }
                     })
                 ])

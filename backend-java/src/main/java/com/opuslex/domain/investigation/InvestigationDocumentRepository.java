@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface InvestigationDocumentRepository extends JpaRepository<InvestigationDocument, Integer> {
+    java.util.List<InvestigationDocument> findByInvestigationId(Integer investigationId);
 }

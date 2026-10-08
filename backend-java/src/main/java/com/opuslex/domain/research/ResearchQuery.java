@@ -20,4 +20,13 @@ public class ResearchQuery {
     @Column(name = "created_at")
     private LocalDateTime created_at;
 
+
+    public Integer getId() { return this.id; }
+    public void setId(Integer id) { this.id = id; }
+    public String getQuestion() { return this.question; }
+    public void setQuestion(String question) { this.question = question; }
+    public String getStatus() { return this.status; }
+    public void setStatus(String status) { this.status = status; }
+    public LocalDateTime getCreatedAt() { return this.created_at; }
+    public void setCreatedAt(LocalDateTime created_at) { this.created_at = created_at; }
 }

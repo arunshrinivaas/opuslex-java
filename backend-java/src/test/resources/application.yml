@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: legal-compliance-api
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/legal_compliance_db}
+    username: ${DATABASE_USER:legal_app}
+    password: ${DATABASE_PASSWORD:legal_app_password}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+server:
+  port: 8080
+
+jwt:
+  secret: this_is_a_test_secret_key_that_is_at_least_32_characters_long
+  expiration: 86400000

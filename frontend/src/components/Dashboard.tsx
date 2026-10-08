@@ -319,7 +319,7 @@ function SettingsWorkspace({ user, onRefreshUser }: { user?: any; onRefreshUser?
         setPhoneLoading(true)
 
         try {
-            const res = await fetch("http://127.0.0.1:8000/api/v1/auth/phone/link/send", {
+            const res = await fetch("http://127.0.0.1:8080/api/v1/auth/phone/link/send", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -361,7 +361,7 @@ function SettingsWorkspace({ user, onRefreshUser }: { user?: any; onRefreshUser?
         setPhoneLoading(true)
 
         try {
-            const res = await fetch("http://127.0.0.1:8000/api/v1/auth/phone/link/verify", {
+            const res = await fetch("http://127.0.0.1:8080/api/v1/auth/phone/link/verify", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -398,7 +398,7 @@ function SettingsWorkspace({ user, onRefreshUser }: { user?: any; onRefreshUser?
         setEmailLoading(true)
 
         try {
-            const res = await fetch("http://127.0.0.1:8000/api/v1/auth/email-otp/verify-account/send", {
+            const res = await fetch("http://127.0.0.1:8080/api/v1/auth/email-otp/verify-account/send", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -439,7 +439,7 @@ function SettingsWorkspace({ user, onRefreshUser }: { user?: any; onRefreshUser?
         setEmailLoading(true)
 
         try {
-            const res = await fetch("http://127.0.0.1:8000/api/v1/auth/email-otp/verify-account/verify", {
+            const res = await fetch("http://127.0.0.1:8080/api/v1/auth/email-otp/verify-account/verify", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -472,7 +472,7 @@ function SettingsWorkspace({ user, onRefreshUser }: { user?: any; onRefreshUser?
                 setStorageError(false)
                 try {
                     const token = localStorage.getItem("access_token")
-                    const res = await fetch("http://127.0.0.1:8000/api/v1/documents/", {
+                    const res = await fetch("http://127.0.0.1:8080/api/v1/documents/", {
                         headers: { Authorization: `Bearer ${token}` }
                     })
                     if (!res.ok) throw new Error()
@@ -496,7 +496,7 @@ function SettingsWorkspace({ user, onRefreshUser }: { user?: any; onRefreshUser?
 
         try {
             const token = localStorage.getItem("access_token")
-            const res = await fetch(`http://127.0.0.1:8000/api/v1/documents/${documentToDelete.id}`, {
+            const res = await fetch(`http://127.0.0.1:8080/api/v1/documents/${documentToDelete.id}`, {
                 method: "DELETE",
                 headers: { Authorization: `Bearer ${token}` }
             })
@@ -531,7 +531,7 @@ function SettingsWorkspace({ user, onRefreshUser }: { user?: any; onRefreshUser?
 
         try {
             const token = localStorage.getItem("access_token")
-            const res = await fetch("http://127.0.0.1:8000/api/v1/data/export", {
+            const res = await fetch("http://127.0.0.1:8080/api/v1/data/export", {
                 headers: { Authorization: `Bearer ${token}` }
             })
 
@@ -565,7 +565,7 @@ function SettingsWorkspace({ user, onRefreshUser }: { user?: any; onRefreshUser?
             const token = localStorage.getItem("access_token")
             if (!token) return
             try {
-                const res = await fetch("http://127.0.0.1:8000/api/v1/auth/2fa/status", {
+                const res = await fetch("http://127.0.0.1:8080/api/v1/auth/2fa/status", {
                     headers: { Authorization: `Bearer ${token}` }
                 })
                 if (res.ok) {
@@ -594,7 +594,7 @@ function SettingsWorkspace({ user, onRefreshUser }: { user?: any; onRefreshUser?
                 setMetricsError(false)
                 const token = localStorage.getItem("access_token")
                 try {
-                    const res = await fetch("http://127.0.0.1:8000/api/v1/workspace/overview", {
+                    const res = await fetch("http://127.0.0.1:8080/api/v1/workspace/overview", {
                         headers: { Authorization: `Bearer ${token}` }
                     })
                     if (res.ok) {
@@ -623,7 +623,7 @@ function SettingsWorkspace({ user, onRefreshUser }: { user?: any; onRefreshUser?
 
         const token = localStorage.getItem("access_token") ?? ""
         try {
-            const res = await fetch("http://127.0.0.1:8000/api/v1/auth/2fa/setup", {
+            const res = await fetch("http://127.0.0.1:8080/api/v1/auth/2fa/setup", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -659,7 +659,7 @@ function SettingsWorkspace({ user, onRefreshUser }: { user?: any; onRefreshUser?
         setSetupSubmitting(true)
 
         try {
-            const res = await fetch("http://127.0.0.1:8000/api/v1/auth/2fa/enable", {
+            const res = await fetch("http://127.0.0.1:8080/api/v1/auth/2fa/enable", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -710,7 +710,7 @@ function SettingsWorkspace({ user, onRefreshUser }: { user?: any; onRefreshUser?
         setDisableLoading(true)
 
         try {
-            const res = await fetch("http://127.0.0.1:8000/api/v1/auth/2fa/disable", {
+            const res = await fetch("http://127.0.0.1:8080/api/v1/auth/2fa/disable", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -771,7 +771,7 @@ function SettingsWorkspace({ user, onRefreshUser }: { user?: any; onRefreshUser?
         setPasswordLoading(true)
 
         try {
-            const res = await fetch("http://127.0.0.1:8000/api/v1/auth/change-password", {
+            const res = await fetch("http://127.0.0.1:8080/api/v1/auth/change-password", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -2145,7 +2145,7 @@ function HomeWorkspace({
             const token = localStorage.getItem("access_token")
             if (!token) return
             try {
-                const res = await fetch("http://127.0.0.1:8000/api/v1/workspace/overview", {
+                const res = await fetch("http://127.0.0.1:8080/api/v1/workspace/overview", {
                     headers: { Authorization: `Bearer ${token}` }
                 })
                 if (!res.ok) throw new Error("Failed to load workspace overview")
@@ -2482,13 +2482,13 @@ function Dashboard() {
             try {
                 const encoded = encodeURIComponent(query)
                 const [invRes, polRes, regRes] = await Promise.all([
-                    fetch("http://127.0.0.1:8000/api/v1/investigations/", {
+                    fetch("http://127.0.0.1:8080/api/v1/investigations/", {
                         headers: { Authorization: `Bearer ${token}` }
                     }),
-                    fetch(`http://127.0.0.1:8000/api/v1/policies/?search=${encoded}&limit=5`, {
+                    fetch(`http://127.0.0.1:8080/api/v1/policies/?search=${encoded}&limit=5`, {
                         headers: { Authorization: `Bearer ${token}` }
                     }),
-                    fetch(`http://127.0.0.1:8000/api/v1/regulations/?search=${encoded}&limit=5`, {
+                    fetch(`http://127.0.0.1:8080/api/v1/regulations/?search=${encoded}&limit=5`, {
                         headers: { Authorization: `Bearer ${token}` }
                     }),
                 ])
@@ -2567,7 +2567,7 @@ function Dashboard() {
         setNotificationsLoading(true)
         setNotificationsError(null)
 
-        fetch("http://127.0.0.1:8000/api/v1/workspace/overview", { headers: { Authorization: `Bearer ${token}` } })
+        fetch("http://127.0.0.1:8080/api/v1/workspace/overview", { headers: { Authorization: `Bearer ${token}` } })
             .then(r => {
                 if (!r.ok) throw new Error("Failed to load workspace activity")
                 return r.json()
@@ -2643,7 +2643,7 @@ function Dashboard() {
         try {
             const token = localStorage.getItem("access_token")
             if (!token) return
-            const res = await fetch("http://127.0.0.1:8000/api/v1/auth/me", {
+            const res = await fetch("http://127.0.0.1:8080/api/v1/auth/me", {
                 headers: { Authorization: `Bearer ${token}` }
             })
             if (res.ok) {

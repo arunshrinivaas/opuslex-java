@@ -76,7 +76,7 @@ export default function Agents() {
             try {
                 const token = localStorage.getItem("access_token");
                 if (!token) return;
-                const res = await fetch("http://127.0.0.1:8000/api/v1/investigations/", {
+                const res = await fetch("http://127.0.0.1:8080/api/v1/investigations/", {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 if (!res.ok) throw new Error("Failed to load investigations");
@@ -102,7 +102,7 @@ export default function Agents() {
             if (!token) return;
             
             try {
-                const docsRes = await fetch(`http://127.0.0.1:8000/api/v1/investigations/${selectedInvestigation.id}/documents`, {
+                const docsRes = await fetch(`http://127.0.0.1:8080/api/v1/investigations/${selectedInvestigation.id}/documents`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 if (docsRes.ok) {
@@ -110,7 +110,7 @@ export default function Agents() {
                     setDocumentsCount(docs.length);
                 }
                 
-                const runsRes = await fetch(`http://127.0.0.1:8000/api/v1/agents/runs?investigation_id=${selectedInvestigation.id}`, {
+                const runsRes = await fetch(`http://127.0.0.1:8080/api/v1/agents/runs?investigation_id=${selectedInvestigation.id}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 if (runsRes.ok) {
@@ -132,7 +132,7 @@ export default function Agents() {
         setError("");
         const token = localStorage.getItem("access_token");
         try {
-            const res = await fetch(`http://127.0.0.1:8000/api/v1/agents/investigations/${selectedInvestigation.id}/run`, {
+            const res = await fetch(`http://127.0.0.1:8080/api/v1/agents/investigations/${selectedInvestigation.id}/run`, {
                 method: "POST",
                 headers: { 
                     "Content-Type": "application/json",

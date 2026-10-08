@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { ShieldCheck, Search, Plus, X, ChevronDown, ChevronUp, AlertTriangle } from "lucide-react"
 
-const API = "http://127.0.0.1:8000"
+const API = "http://127.0.0.1:8080"
 
 type ComplianceItem = {
     id: number

@@ -265,7 +265,7 @@ export default function Auth({ onLoginSuccess }: AuthProps) {
         setMessage("Sending verification code…");
         setAuthLoading("email-otp");
         try {
-            const response = await fetch("http://127.0.0.1:8000/api/v1/auth/email-otp/send", {
+            const response = await fetch("http://127.0.0.1:8080/api/v1/auth/email-otp/send", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email: email.trim() }),
@@ -299,7 +299,7 @@ export default function Auth({ onLoginSuccess }: AuthProps) {
         setMessage("Verifying code…");
         setAuthLoading("email-otp-verify");
         try {
-            const response = await fetch("http://127.0.0.1:8000/api/v1/auth/email-otp/verify", {
+            const response = await fetch("http://127.0.0.1:8080/api/v1/auth/email-otp/verify", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email: email.trim(), code: otpCode.trim() }),
@@ -336,7 +336,7 @@ export default function Auth({ onLoginSuccess }: AuthProps) {
         setMessage("Signing in…");
         setAuthLoading("email");
         try {
-            const response = await fetch("http://127.0.0.1:8000/api/v1/auth/login", {
+            const response = await fetch("http://127.0.0.1:8080/api/v1/auth/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password }),
@@ -372,7 +372,7 @@ export default function Auth({ onLoginSuccess }: AuthProps) {
         setMessage("Verifying code…");
         setAuthLoading("mfa");
         try {
-            const response = await fetch("http://127.0.0.1:8000/api/v1/auth/login/mfa", {
+            const response = await fetch("http://127.0.0.1:8080/api/v1/auth/login/mfa", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ mfa_token: mfaToken, code: mfaCode.trim() }),
@@ -398,7 +398,7 @@ export default function Auth({ onLoginSuccess }: AuthProps) {
         setMessage("Creating account…");
         setAuthLoading("email");
         try {
-            const response = await fetch("http://127.0.0.1:8000/api/v1/auth/register", {
+            const response = await fetch("http://127.0.0.1:8080/api/v1/auth/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password, full_name: fullName }),
@@ -425,7 +425,7 @@ export default function Auth({ onLoginSuccess }: AuthProps) {
             return;
         }
         try {
-            const res = await fetch("http://127.0.0.1:8000/api/v1/auth/google", {
+            const res = await fetch("http://127.0.0.1:8080/api/v1/auth/google", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ id_token: response.credential }),
@@ -486,7 +486,7 @@ export default function Auth({ onLoginSuccess }: AuthProps) {
         }
 
         try {
-            const res = await fetch("http://127.0.0.1:8000/api/v1/auth/apple", {
+            const res = await fetch("http://127.0.0.1:8080/api/v1/auth/apple", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),

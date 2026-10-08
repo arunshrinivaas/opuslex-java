@@ -65,4 +65,37 @@ public class AgentRun {
     @Transient
     private String investigation;
 
+
+    public Integer getId() { return this.id; }
+    public void setId(Integer id) { this.id = id; }
+    public Integer getInvestigationId() { return this.investigation_id; }
+    public void setInvestigationId(Integer investigation_id) { this.investigation_id = investigation_id; }
+    public Integer getUserId() { return this.user_id; }
+    public void setUserId(Integer user_id) { this.user_id = user_id; }
+    public String getQuestion() { return this.question; }
+    public void setQuestion(String question) { this.question = question; }
+    public String getStatus() { return this.status; }
+    public void setStatus(String status) { this.status = status; }
+    public String getFinding() { return this.finding; }
+    public void setFinding(String finding) { this.finding = finding; }
+    public JsonNode getEvidence() { return this.evidence; }
+    public void setEvidence(JsonNode evidence) { this.evidence = evidence; }
+    public JsonNode getConflicts() { return this.conflicts; }
+    public void setConflicts(JsonNode conflicts) { this.conflicts = conflicts; }
+    public JsonNode getEvidenceGaps() { return this.evidence_gaps; }
+    public void setEvidenceGaps(JsonNode evidence_gaps) { this.evidence_gaps = evidence_gaps; }
+    public JsonNode getApplicableRequirements() { return this.applicable_requirements; }
+    public void setApplicableRequirements(JsonNode applicable_requirements) { this.applicable_requirements = applicable_requirements; }
+    public JsonNode getSuggestedActions() { return this.suggested_actions; }
+    public void setSuggestedActions(JsonNode suggested_actions) { this.suggested_actions = suggested_actions; }
+    public JsonNode getCitations() { return this.citations; }
+    public void setCitations(JsonNode citations) { this.citations = citations; }
+    public Integer getRiskScore() { return this.risk_score; }
+    public void setRiskScore(Integer risk_score) { this.risk_score = risk_score; }
+    public String getRiskLevel() { return this.risk_level; }
+    public void setRiskLevel(String risk_level) { this.risk_level = risk_level; }
+    public LocalDateTime getCreatedAt() { return this.created_at; }
+    public void setCreatedAt(LocalDateTime created_at) { this.created_at = created_at; }
+    public String getInvestigation() { return this.investigation; }
+    public void setInvestigation(String investigation) { this.investigation = investigation; }
 }

@@ -219,7 +219,7 @@ function Investigations() {
 
         try {
             const response = await fetch(
-                `http://127.0.0.1:8000/api/v1/investigations/${selectedInvestigation.id}/comments`,
+                `http://127.0.0.1:8080/api/v1/investigations/${selectedInvestigation.id}/comments`,
                 {
                     method: "POST",
                     headers: {
@@ -255,7 +255,7 @@ function Investigations() {
         try {
             const token = localStorage.getItem("access_token")
             const response = await fetch(
-                `http://127.0.0.1:8000/api/v1/agents/investigations/${selectedInvestigation.id}/run`,
+                `http://127.0.0.1:8080/api/v1/agents/investigations/${selectedInvestigation.id}/run`,
                 {
                     method: "POST",
                     headers: {
@@ -288,7 +288,7 @@ function Investigations() {
 
         try {
             const response = await fetch(
-                "http://127.0.0.1:8000/api/v1/documents/",
+                "http://127.0.0.1:8080/api/v1/documents/",
                 {
                     headers: { Authorization: `Bearer ${token}` },
                 }
@@ -314,7 +314,7 @@ function Investigations() {
 
         try {
             const response = await fetch(
-                `http://127.0.0.1:8000/api/v1/investigations/${id}/documents`,
+                `http://127.0.0.1:8080/api/v1/investigations/${id}/documents`,
                 {
                     headers: { Authorization: `Bearer ${token}` },
                 }
@@ -341,7 +341,7 @@ function Investigations() {
         const loadInvestigations = async () => {
             try {
                 const response = await fetch(
-                    "http://127.0.0.1:8000/api/v1/investigations/",
+                    "http://127.0.0.1:8080/api/v1/investigations/",
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -373,7 +373,7 @@ function Investigations() {
         const loadAvailableDocuments = async () => {
             try {
                 const response = await fetch(
-                    "http://127.0.0.1:8000/api/v1/documents/",
+                    "http://127.0.0.1:8080/api/v1/documents/",
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -413,7 +413,7 @@ function Investigations() {
 
             try {
                 const response = await fetch(
-                    `http://127.0.0.1:8000/api/v1/investigations/${selectedInvestigation.id}/documents`,
+                    `http://127.0.0.1:8080/api/v1/investigations/${selectedInvestigation.id}/documents`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -459,7 +459,7 @@ function Investigations() {
 
             try {
                 const response = await fetch(
-                    `http://127.0.0.1:8000/api/v1/investigations/${selectedInvestigation.id}/queries`,
+                    `http://127.0.0.1:8080/api/v1/investigations/${selectedInvestigation.id}/queries`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -501,7 +501,7 @@ function Investigations() {
 
             try {
                 const response = await fetch(
-                    `http://127.0.0.1:8000/api/v1/investigations/${selectedInvestigation.id}/comments`,
+                    `http://127.0.0.1:8080/api/v1/investigations/${selectedInvestigation.id}/comments`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -543,7 +543,7 @@ function Investigations() {
 
         try {
             const response = await fetch(
-                "http://127.0.0.1:8000/api/v1/investigations/",
+                "http://127.0.0.1:8080/api/v1/investigations/",
                 {
                     method: "POST",
                     headers: {
@@ -588,7 +588,7 @@ function Investigations() {
 
         try {
             const response = await fetch(
-                `http://127.0.0.1:8000/api/v1/investigations/${editInvestigationId}`,
+                `http://127.0.0.1:8080/api/v1/investigations/${editInvestigationId}`,
                 {
                     method: "PATCH",
                     headers: {
@@ -628,7 +628,7 @@ function Investigations() {
 
         try {
             const response = await fetch(
-                `http://127.0.0.1:8000/api/v1/investigations/${id}/status`,
+                `http://127.0.0.1:8080/api/v1/investigations/${id}/status`,
                 {
                     method: "PATCH",
                     headers: {
@@ -666,7 +666,7 @@ function Investigations() {
 
         try {
             const response = await fetch(
-                `http://127.0.0.1:8000/api/v1/investigations/${deleteInvestigationId}`,
+                `http://127.0.0.1:8080/api/v1/investigations/${deleteInvestigationId}`,
                 {
                     method: "DELETE",
                     headers: {
@@ -715,7 +715,7 @@ function Investigations() {
             formData.append("file", file)
 
             const uploadResponse = await fetch(
-                "http://127.0.0.1:8000/api/v1/documents/upload",
+                "http://127.0.0.1:8080/api/v1/documents/upload",
                 {
                     method: "POST",
                     headers: {
@@ -764,7 +764,7 @@ function Investigations() {
             }
 
             const attachResponse = await fetch(
-                `http://127.0.0.1:8000/api/v1/investigations/${selectedInvestigation.id}/documents/${documentId}`,
+                `http://127.0.0.1:8080/api/v1/investigations/${selectedInvestigation.id}/documents/${documentId}`,
                 {
                     method: "POST",
                     headers: {
@@ -824,7 +824,7 @@ function Investigations() {
 
         try {
             const response = await fetch(
-                `http://127.0.0.1:8000/api/v1/investigations/${selectedInvestigation.id}/documents/${documentId}`,
+                `http://127.0.0.1:8080/api/v1/investigations/${selectedInvestigation.id}/documents/${documentId}`,
                 {
                     method: "POST",
                     headers: {
@@ -901,7 +901,7 @@ function Investigations() {
 
         try {
             const response = await fetch(
-                `http://127.0.0.1:8000/api/v1/investigations/${selectedInvestigation.id}/documents/${documentId}`,
+                `http://127.0.0.1:8080/api/v1/investigations/${selectedInvestigation.id}/documents/${documentId}`,
                 {
                     method: "DELETE",
                     headers: { Authorization: `Bearer ${token}` },
@@ -940,7 +940,7 @@ function Investigations() {
 
         try {
             const response = await fetch(
-                `http://127.0.0.1:8000/api/v1/documents/${documentId}`,
+                `http://127.0.0.1:8080/api/v1/documents/${documentId}`,
                 {
                     method: "DELETE",
                     headers: { Authorization: `Bearer ${token}` },
@@ -992,7 +992,7 @@ function Investigations() {
             console.log("FETCHING PREVIEW")
 
             const response = await fetch(
-                `http://127.0.0.1:8000/api/v1/documents/${document.id}/preview`,
+                `http://127.0.0.1:8080/api/v1/documents/${document.id}/preview`,
                 {
                     headers: { Authorization: `Bearer ${token}` },
                 }
@@ -1112,7 +1112,7 @@ function Investigations() {
 
         try {
             const response = await fetch(
-                `http://127.0.0.1:8000/api/v1/investigations/${selectedInvestigation.id}/compare`,
+                `http://127.0.0.1:8080/api/v1/investigations/${selectedInvestigation.id}/compare`,
                 {
                     method: "POST",
                     headers: {
@@ -1190,7 +1190,7 @@ function Investigations() {
 
         try {
             const ragResponse = await fetch(
-                "http://127.0.0.1:8000/api/v1/rag/ask",
+                "http://127.0.0.1:8080/api/v1/rag/ask",
                 {
                     method: "POST",
                     headers: {
@@ -1222,7 +1222,7 @@ function Investigations() {
             setSources(ragData.sources || [])
 
             const saveResponse = await fetch(
-                `http://127.0.0.1:8000/api/v1/investigations/${selectedInvestigation.id}/queries`,
+                `http://127.0.0.1:8080/api/v1/investigations/${selectedInvestigation.id}/queries`,
                 {
                     method: "POST",
                     headers: {

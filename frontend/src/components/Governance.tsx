@@ -13,7 +13,7 @@ import {
     XCircle,
 } from "lucide-react"
 
-const API = "http://127.0.0.1:8000"
+const API = "http://127.0.0.1:8080"
 
 // ---------------------------------------------------------------------------
 // Types — mirror governance router responses exactly

@@ -41,4 +41,27 @@ public class Integration {
     @Transient
     private String user;
 
+
+    public Integer getId() { return this.id; }
+    public void setId(Integer id) { this.id = id; }
+    public Integer getUserId() { return this.user_id; }
+    public void setUserId(Integer user_id) { this.user_id = user_id; }
+    public String getProvider() { return this.provider; }
+    public void setProvider(String provider) { this.provider = provider; }
+    public String getProviderAccountId() { return this.provider_account_id; }
+    public void setProviderAccountId(String provider_account_id) { this.provider_account_id = provider_account_id; }
+    public String getAccessToken() { return this.access_token; }
+    public void setAccessToken(String access_token) { this.access_token = access_token; }
+    public String getRefreshTokenEncrypted() { return this.refresh_token_encrypted; }
+    public void setRefreshTokenEncrypted(String refresh_token_encrypted) { this.refresh_token_encrypted = refresh_token_encrypted; }
+    public LocalDateTime getExpiresAt() { return this.expires_at; }
+    public void setExpiresAt(LocalDateTime expires_at) { this.expires_at = expires_at; }
+    public String getScopes() { return this.scopes; }
+    public void setScopes(String scopes) { this.scopes = scopes; }
+    public LocalDateTime getCreatedAt() { return this.created_at; }
+    public void setCreatedAt(LocalDateTime created_at) { this.created_at = created_at; }
+    public LocalDateTime getUpdatedAt() { return this.updated_at; }
+    public void setUpdatedAt(LocalDateTime updated_at) { this.updated_at = updated_at; }
+    public String getUser() { return this.user; }
+    public void setUser(String user) { this.user = user; }
 }

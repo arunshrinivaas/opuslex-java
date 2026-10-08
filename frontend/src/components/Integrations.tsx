@@ -22,7 +22,7 @@ function Integrations() {
         const fetchStatus = async () => {
             try {
                 const token = localStorage.getItem("access_token")
-                const res = await fetch("http://localhost:8000/api/v1/integrations/google-drive/status", {
+                const res = await fetch("http://localhost:8080/api/v1/integrations/google-drive/status", {
                     headers: { "Authorization": `Bearer ${token}` }
                 })
                 if (res.ok) {
@@ -41,7 +41,7 @@ function Integrations() {
     const handleConnectDrive = async () => {
         try {
             const token = localStorage.getItem("access_token")
-            const res = await fetch("http://localhost:8000/api/v1/integrations/google-drive/auth-url", {
+            const res = await fetch("http://localhost:8080/api/v1/integrations/google-drive/auth-url", {
                 headers: { "Authorization": `Bearer ${token}` }
             })
             if (res.ok) {
@@ -60,7 +60,7 @@ function Integrations() {
         if (!window.confirm("Are you sure you want to disconnect Google Drive?")) return
         try {
             const token = localStorage.getItem("access_token")
-            const res = await fetch("http://localhost:8000/api/v1/integrations/google-drive", {
+            const res = await fetch("http://localhost:8080/api/v1/integrations/google-drive", {
                 method: "DELETE",
                 headers: { "Authorization": `Bearer ${token}` }
             })
@@ -93,7 +93,7 @@ function Integrations() {
             const exchangeCode = async () => {
                 try {
                     const token = localStorage.getItem("access_token")
-                    const res = await fetch("http://localhost:8000/api/v1/integrations/google-drive/callback", {
+                    const res = await fetch("http://localhost:8080/api/v1/integrations/google-drive/callback", {
                         method: "POST",
                         headers: {
                             "Authorization": `Bearer ${token}`,

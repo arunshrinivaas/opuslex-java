@@ -71,7 +71,7 @@ export default function GoogleDrivePicker() {
             setImporting(true)
             try {
                 const token = localStorage.getItem("access_token")
-                const res = await fetch("http://localhost:8000/api/v1/integrations/google-drive/import", {
+                const res = await fetch("http://localhost:8080/api/v1/integrations/google-drive/import", {
                     method: "POST",
                     headers: { 
                         "Authorization": `Bearer ${token}`,
